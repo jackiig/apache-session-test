@@ -3,8 +3,8 @@ mysql:
   environment:
     MYSQL_ROOT_PASSWORD: abc123
     MYSQL_DATABASE: polmaker
-  expose:
-    - 3306
+  ports:
+    - 3307:3306
   volumes:
     - /var/lib/mysql
 web:
