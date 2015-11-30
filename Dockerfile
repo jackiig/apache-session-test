@@ -6,6 +6,7 @@ WORKDIR /usr/src/app/
 ADD ./ /usr/src/app/
 
 RUN mv mason-app.conf /etc/apache2/sites-enabled/000-default.conf
+RUN cpanm -f Apache::Session::Generate::UUID
 
 ## What port do we expose to the world?
 EXPOSE 80
