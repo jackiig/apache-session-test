@@ -3,9 +3,10 @@ package MasonX::MyApp;
 use strict;
 use HTML::Mason::ApacheHandler ( args_method => 'mod_perl' );
 use DBI;
-use Apache::DBI;
+# use Apache::DBI;
+## Uncomment to use the debug MySQL session.
+# use lib qw{/usr/src/app/lib/};
 
-# $DBH = DBI->connect($SCHEMA, $CONF->{database}->{user}, $CONF->{database}->{pass});
 my $DBH = DBI->connect('DBI:mysql:database=polmaker;host=mysql;port=3306',
   'root', 'abc123') or die("Unable to connect to database.");
 
@@ -28,9 +29,7 @@ my $ah = HTML::Mason::ApacheHandler->new (
 	session_cookie_expires		=>	"session",
 	session_allow_invalid_id	=>	0,
 	error_mode					=>	'fatal',
-	);
-
-
+);
 
 sub handler {
    my $r = shift;  # Apache request object;
