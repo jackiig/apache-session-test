@@ -26,7 +26,7 @@ Connect to the MySQL database using the default root password (this is for
 experimentation only, so it's `abc123`).  Yes, the port is `3307`, not `3306`,
 that's not a typo.  You can change this in `docker-compose.yml` if you'd like.
 
-    $ mysql -u root -pabc123 -h 192.168.99.100 -p 3307 polmaker
+    $ mysql -u root -pabc123 -h 192.168.99.100 -P 3307 polmaker
 
 Add the `sessions` table using the following:
 
